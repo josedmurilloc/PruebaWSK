@@ -62,7 +62,11 @@ public class ArticuloWS {
     @Produces(MediaType.APPLICATION_JSON)
     public Articulo getArticulo(@PathParam("id") int id) {
         //TODO return proper representation object
-        Articulo articulo = null;
+        Articulo articulo = new Articulo(
+                0,
+                "The object does not exist",
+                0.00);
+        
         Articulo articulo2 = ArticuloGestion.getArticulo(id);
         if (articulo2 != null) {
             return articulo2;
